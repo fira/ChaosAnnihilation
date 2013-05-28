@@ -5,11 +5,11 @@ class Student {
 	public String firstname;
 	public String lastname;
 	
-	public int classement;
-	public boolean redoublant;
+	public int ranking;
+	public boolean repeating;
 	
 	/* Modelizes the wishes of students for each course slot */
-	public HashMap<String, List<String>> choixElectives;
+	public HashMap<String, List<String>> courseChoice;
 		
 	Student(String lastname, String firstname, int classement) {
 		this(lastname, firstname, ranking, false);

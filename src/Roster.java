@@ -6,7 +6,7 @@ class Roster {
 	private List<Student> students;
 	private List<Student> remainingStudents;
 	/* List of possible courses */
-	private List<Course> 
+	private List<Course> courses;
 
 	/* List of student groups and their associated courses */
 	private List<StudentsGroup> assignement;
