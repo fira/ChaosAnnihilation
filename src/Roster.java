@@ -5,12 +5,11 @@ class Roster {
 	/* List of all students to be considered */
 	private List<Student> students;
 	private List<Student> remainingStudents;
+	/* List of possible courses */
+	private List<Course> 
 
-	/* Lists of students based on available courses 
-	 * Associates a course' identifier to a list of different groups
-	 * Ie. a single course can have several student groups  */
-	private HashMap<String, List<List<Student>> courses;
-
+	/* List of student groups and their associated courses */
+	private List<StudentsGroup> assignement;
 
 	/* The roster score is calculated depending on the students 
 	 * distribution that was attained during this pass.
