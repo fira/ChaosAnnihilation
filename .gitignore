@@ -7,3 +7,5 @@
 
 # Ignore vim swap
 *.swp
+# Ignore gedit swap
+*~
