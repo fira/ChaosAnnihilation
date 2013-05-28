@@ -9,7 +9,7 @@ class Student {
 	public boolean repeating;
 	
 	/* Modelizes the wishes of students for each course slot */
-	public HashMap<String, List<String>> courseChoice;
+	public List<List<Course>> courseChoice;
 		
 	Student(String lastname, String firstname, int classement) {
 		this(lastname, firstname, ranking, false);
