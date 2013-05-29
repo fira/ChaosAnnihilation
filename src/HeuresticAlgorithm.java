@@ -5,11 +5,10 @@ public interface HeuresticAlgorithm {
 	public String name;
 	public List<String> arguments;
 
-/* Deficient by design ? */
-	/* Calculates the current roster's score based on student wishes 
-	 * and other target goals. */	
-//	public void updateScore(Roster);
+	/* Calculate the heurestic score for a single student placed in a given
+	 * students group. Lower values are better */
+	public int getStudentScore(Student, StudentsGroup);
 	
-	
-	
+	/* Calculates the heurestic score for a whole student group */
+	public int getGroupScore(StudentsGroup);
 }
