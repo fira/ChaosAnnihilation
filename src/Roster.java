@@ -22,16 +22,23 @@ class Roster {
 		this.courses = new List<Course>;
 		this.assignement = new List<StudentsGroup>;
 	}	
+	
 	/* Build a new student roster by copying an existing one */
-	Roster(Roster source) {
+	Roster(Roster source) { this(source, false); }
+	Roster(Roster source, boolean clear) {
 		/* FIXME: Assume both roster share the same students/courses
 		at all times. This should be a real copy, but all in all,
 		we don't really need it (yet?). Also speedup things. */
 		this.students = source.students;
 		this.courses = source.courses;
 		
-		this.remainingStudents = new List<Student>(source.remainingStudents);
-		this.assignement = new List<StudentsGroup>(source.assignement);
+		if(!clear) {
+			this.remainingStudents = new List<Student>(source.remainingStudents);
+			this.assignement = new List<StudentsGroup>(source.assignement);
+		} else {
+			this.remainingStudents = new List<Student>(this.students);
+			this.assignement = new List<StudentsGroup>();
+		}
 	}
 	
 	/* Resets the roster to an unassigned state */
