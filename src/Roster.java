@@ -37,8 +37,8 @@ class Roster {
 		
 		this.remainingStudents = new LinkedList<Student>(this.students);
 		this.assignement = new LinkedList<StudentsGroup>();
-		}
 	}
+	
 	
 	/* Resets the roster to an unassigned state */
 	public void clearAssignements() {
