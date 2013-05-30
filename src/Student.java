@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
 
 class Student {
 	public String firstname;
@@ -20,11 +21,8 @@ class Student {
 		this.lastname = lastname;
 		this.ranking = ranking;
 		this.repeating = repeating;
-
-		/* Initialize the HashMap of wishes */
-		this.coursesWishes = new HashMap<String, List<String>>();
- 	}
-
-
+		
+		this.coursesChoice = new ArrayList<List<Course>>();
 }
 
+}

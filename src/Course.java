@@ -1,4 +1,4 @@
-import java.util.Hashmap;
+import java.util.HashMap;
 import java.util.List;
 
 /* Carracterises a course that can be followed by one or several
@@ -24,7 +24,7 @@ class Course {
 	Course(String slot, String name, int maxGroups) {
 		this(slot, name, maxGroups, 16, 24); 
 	}
-	Course(String slot, String name, int maxGroups, minStudents, maxStudents) {
+	Course(String slot, String name, int maxGroups, int minStudents, int maxStudents) {
 		this.slotId = slot;
 		this.name = name;
 		this.maxGroups = maxGroups;

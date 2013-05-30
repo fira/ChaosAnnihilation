@@ -1,5 +1,8 @@
 import java.util.HashMap;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Iterator;
 
 class StudentsGroup {
 	private List<Student> students;
@@ -7,20 +10,20 @@ class StudentsGroup {
 
 	/* Initializes the object with an empty list of students */
 	StudentsGroup(Course course) {
-		this.students = new List<Student>;
+		this.students = new ArrayList<Student>();
 		this.course = course;
 	}
 	StudentsGroup() { this(null); }
 
 	/* Returns an iterator that can be used to fetch and access all
 	 * the students in the group */
-	/* FIXME: Possibly deficient by design */
+	/* FIXME: Probably deficient by design */
 	public Iterator<List<Student>> getStudents() {
 		return this.students.iterator();
 	}
 
 	/* Adds a student to the current group */
-	public void addStudent(Student student)
+	public void addStudent(Student student) {
 		this.students.add(student);
 	}
 
@@ -30,13 +33,10 @@ class StudentsGroup {
 	}
 
 	/* TODO: 
-	 *  Swapping functions should avoid using the public functions 
-	 *  so we can add sanity checks to them - eg. checking that a student
-	 *  follows a single course in a given slot at any time
-	 *  Solutions: hardcode operation, or create additional private
-	 *  function then rewrite the public ones as wrappers.
+	 *  Swapping functions should use private functions
+	 *  so we can add sanity checks to public ones - eg. 
+	 *  check that students follows a single course in a slot at any time
 	 */	
-
 	/* Swap a student from a foreign group to the current */
 	public void changeStudent(Student student, StudentsGroup foreign) {
 		foreign.delStudent(student);

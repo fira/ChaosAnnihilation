@@ -35,7 +35,7 @@ class Roster {
 		this.students = source.students;
 		this.courses = source.courses;
 		
-		this.remainingStudents = new ArrayList<Student>();
+		this.remainingStudents = new LinkedList<Student>(this.students);
 		this.assignement = new LinkedList<StudentsGroup>();
 		}
 	}
