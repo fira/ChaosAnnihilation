@@ -4,6 +4,10 @@ import java.util.List;
 class Roster {
 	/* List of all students to be considered */
 	private List<Student> students;
+	/* We could check every student through assignement groups
+	 * to know those that aren't in one yet. While using a separate
+	 * attribute might be conceptually deficient by design, it is
+	 * infinitely more practical */
 	private List<Student> remainingStudents;
 	/* List of possible courses */
 	private List<Course> courses;
@@ -11,27 +15,31 @@ class Roster {
 	/* List of student groups and their associated courses */
 	private List<StudentsGroup> assignement;
 
-	/* The roster score is calculated depending on the students 
-	 * distribution that was attained during this pass.
-	 * This serves us as an indicator to weigh different student rosters.
-	 * A lower score is closer to an optimal distribution */
-	private int score;
-	/* Wether or not to recalculate the roster score
-	 * This is necessary after changing the students' data */
-	private boolean scoreUptodate;
-
-	/* Set to true once an algorithm has been applied on our input.
-	 * This prevents outputting invalid results */
-	private boolean processed;
-
+	/* Build a new, empty students roster */
+	Roster() {
+		this.students = new List<Student>;
+		this.remainingStudents = new List<Student>;
+		this.courses = new List<Course>;
+		this.assignement = new List<StudentsGroup>;
+	}	
+	/* Build a new student roster by copying an existing one */
+	Roster(Roster source) {
+		/* FIXME: Assume both roster share the same students/courses
+		at all times. This should be a real copy, but all in all,
+		we don't really need it (yet?). Also speedup things. */
+		this.students = source.students;
+		this.courses = source.courses;
+		
+		this.remainingStudents = new List<Student>(source.remainingStudents);
+		this.assignement = new List<StudentsGroup>(source.assignement);
+	}
 	
-	/* FIXME : Blank class builder */
-	Roster();
+	/* Resets the roster to an unassigned state */
+	public void clearAssignements() { 
+		this.remainingStudents = new List<Student>(this.students);
+		this.assignement.clear();
+	}
 
 	public int getSize() { return this.students.size(); }
-	public int getScore() { 
-		if(scoreUptodate) this.updateScore();
-		return this.score;
-	}
 }
 			
