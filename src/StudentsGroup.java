@@ -18,7 +18,7 @@ class StudentsGroup {
 	/* Returns an iterator that can be used to fetch and access all
 	 * the students in the group */
 	/* FIXME: Probably deficient by design */
-	public Iterator<List<Student>> getStudents() {
+	public Iterator<Student> getStudents() {
 		return this.students.iterator();
 	}
 
@@ -28,8 +28,8 @@ class StudentsGroup {
 	}
 
 	/* Removes a student from this group */
-	public void delStudent(Student student) {
-		this.students.del(student);
+	public void removeStudent(Student student) {
+		this.students.remove(student);
 	}
 
 	/* TODO: 
@@ -39,7 +39,7 @@ class StudentsGroup {
 	 */	
 	/* Swap a student from a foreign group to the current */
 	public void changeStudent(Student student, StudentsGroup foreign) {
-		foreign.delStudent(student);
+		foreign.removeStudent(student);
 		this.addStudent(student);
 	}
 

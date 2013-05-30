@@ -19,7 +19,7 @@ class Course {
 	public int maxStudents;
 
 	Course(String slot, String name) {
-		this(slot, name);
+		this(slot, name, 1);
 	}	
 	Course(String slot, String name, int maxGroups) {
 		this(slot, name, maxGroups, 16, 24); 

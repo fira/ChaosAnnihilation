@@ -10,9 +10,9 @@ class Student {
 	public boolean repeating;
 	
 	/* Modelizes the wishes of students for each course slot */
-	public List<List<Course>> courseChoice;
+	public List<List<Course>> coursesChoices;
 		
-	Student(String lastname, String firstname, int classement) {
+	Student(String lastname, String firstname, int ranking) {
 		this(lastname, firstname, ranking, false);
 	}
 
@@ -22,7 +22,7 @@ class Student {
 		this.ranking = ranking;
 		this.repeating = repeating;
 		
-		this.coursesChoice = new ArrayList<List<Course>>();
+		this.coursesChoices = new ArrayList<List<Course>>();
 }
 
 }
