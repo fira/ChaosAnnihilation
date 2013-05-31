@@ -6,9 +6,11 @@ import java.util.ArrayList;
  */
 public class Wishes {
 	public List<Course> list;
+	public CoursePool pool;
 
-	public Wishes() {
+	public Wishes(CoursePool pool) {
 		/* Simply init with a blank list */
+		this.pool = pool;
 		this.list = new ArrayList<Course>();
         }
 	
