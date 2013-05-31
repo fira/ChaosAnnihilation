@@ -4,12 +4,7 @@ import java.util.LinkedList;
 public class Roster {
 	/* List of all students to be considered */
 	private ArrayList<Student> students;
-        
-	/* We could check every student through assignement groups
-	 * to know those that aren't in one yet. While using a separate
-	 * attribute might be conceptually deficient by design, it is
-	 * infinitely more practical */
-	private LinkedList<Student> remainingStudents;
+
 	/* List of possible courses */
 	private ArrayList<Course> courses;
 
@@ -19,7 +14,6 @@ public class Roster {
 	/* Build a new, empty students roster */
 	public Roster() {
 		this.students = new ArrayList<>();
-		this.remainingStudents = new LinkedList<>();
 		this.courses = new ArrayList<>();
 		this.assignement = new LinkedList<>();
 	}	
@@ -32,16 +26,13 @@ public class Roster {
 		at all times. This should be a real copy, but all in all,
 		we don't really need it (yet?). Also speedup things. */
 		this.students = source.students;
-		this.courses = source.courses;
-		
-		this.remainingStudents = new LinkedList<>(this.students);
+		this.courses = source.courses;	
 		this.assignement = new LinkedList<>();
 	}
 	
 	
 	/* Resets the roster to an unassigned state */
 	public void clearAssignements() {
-		this.remainingStudents = new LinkedList<>(this.students);
 		this.assignement.clear();
 	}
 
