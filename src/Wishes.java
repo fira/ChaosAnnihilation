@@ -14,7 +14,7 @@ public class Wishes {
 		this.list = new ArrayList<Course>();
         }
 	
-	public add(Course c) {
+	public void add(Course c) {
 		this.list.add(c);
 	}
 
