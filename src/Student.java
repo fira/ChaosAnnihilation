@@ -9,7 +9,7 @@ public class Student {
 	public boolean repeating;
 	
 	/* Modelizes the wishes of students for each course slot */
-	public List<List<Course>> coursesChoices;
+	public List<Wishes> coursesChoices;
 		
 	public Student(String lastname, String firstname, int ranking) {
 		this(lastname, firstname, ranking, false);
