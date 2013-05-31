@@ -4,7 +4,9 @@ import java.util.Iterator;
 
 public class StudentsGroup {
 	private List<Student> students;
+	/* We register both the course and which pool it refers to */
 	private Course course;
+	private CoursePool pool;
 
 	/* Initializes the object with an empty list of students */
 	public StudentsGroup(Course course) {
