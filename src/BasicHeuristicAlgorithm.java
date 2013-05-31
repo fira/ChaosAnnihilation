@@ -4,13 +4,13 @@ import java.util.List;
  * and sum the square of their wish' position, minus one.
  * Optimal score would be zero, each student getting a second wish 
  * adds one, third wish adds three, etc. */
-public class BasicHeuresticAlgorithm implements HeuresticAlgorithm {
+public class BasicHeuristicAlgorithm implements HeuristicAlgorithm {
     public String name;
     public List<String> arguments;
 
     @Override
     public String getName() {
-	throw new UnsupportedOperationException("Not supported yet.");
+	return new String("Basic");
     }
 
     @Override
