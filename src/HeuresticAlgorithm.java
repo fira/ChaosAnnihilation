@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.List;
-
 public interface HeuresticAlgorithm {
 	/* Calculate the heurestic score for a single student placed in a given
 	 * students group. Lower values are better */

@@ -1,19 +1,18 @@
-import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Iterator;
 
-class StudentsGroup {
+public class StudentsGroup {
 	private List<Student> students;
 	private Course course;
 
 	/* Initializes the object with an empty list of students */
-	StudentsGroup(Course course) {
-		this.students = new ArrayList<Student>();
+	public StudentsGroup(Course course) {
+		this.students = new ArrayList<>();
 		this.course = course;
 	}
-	StudentsGroup() { this(null); }
+        
+	public StudentsGroup() { this(null); }
 
 	/* Returns an iterator that can be used to fetch and access all
 	 * the students in the group */

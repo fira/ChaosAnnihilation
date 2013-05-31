@@ -1,11 +1,7 @@
-import java.util.HashMap;
-import java.util.List;
-
 /* Carracterises a course that can be followed by one or several
  * StudentGroups. The algorithms can then construct a Roster by assembling
- * students in groups following these courses.
-  */
-class Course {
+ * students in groups following these courses. */
+public class Course {
 	/* Used for identification of courses filling the same planning slot 
 	 * Be careful of mistypings ! */
 	public String slotId;
@@ -18,13 +14,15 @@ class Course {
 	public int minStudents;
 	public int maxStudents;
 
-	Course(String slot, String name) {
+	public Course(String slot, String name) {
 		this(slot, name, 1);
 	}	
-	Course(String slot, String name, int maxGroups) {
+        
+	public Course(String slot, String name, int maxGroups) {
 		this(slot, name, maxGroups, 16, 24); 
 	}
-	Course(String slot, String name, int maxGroups, int minStudents, int maxStudents) {
+        
+	public Course(String slot, String name, int maxGroups, int minStudents, int maxStudents) {
 		this.slotId = slot;
 		this.name = name;
 		this.maxGroups = maxGroups;
