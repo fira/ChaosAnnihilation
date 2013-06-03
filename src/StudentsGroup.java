@@ -50,5 +50,6 @@ public class StudentsGroup {
 		sg2.changeStudent(st2, sg1);
 	}
 
-	public CoursePool getPool() { return this.pool };
+	public Iterator<Student> getStudentsIterator() { return this.students.iterator(); }
+	public CoursePool getPool() { return this.pool; }
 }
