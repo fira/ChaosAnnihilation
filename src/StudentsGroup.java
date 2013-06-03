@@ -50,6 +50,8 @@ public class StudentsGroup {
 		sg2.changeStudent(st2, sg1);
 	}
 
+	public List<Student> getStudents() { return this.students; }
 	public Iterator<Student> getStudentsIterator() { return this.students.iterator(); }
+	public Course getCourse() { return this.course; }
 	public CoursePool getPool() { return this.pool; }
 }
