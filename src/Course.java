@@ -20,7 +20,6 @@ public class Course {
 	}
         
 	public Course(String name, int maxGroups, int minStudents, int maxStudents) {
-		this.slotId = slot;
 		this.name = name;
 		this.maxGroups = maxGroups;
 		this.minStudents = minStudents;
