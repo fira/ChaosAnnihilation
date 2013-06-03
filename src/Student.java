@@ -2,14 +2,14 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Student {
-	public String firstname;
-	public String lastname;
+	private String firstname;
+	private String lastname;
 	
-	public int ranking;
-	public boolean repeating;
+	private int ranking;
+	private boolean repeating;
 	
 	/* Modelizes the wishes of students for each course slot */
-	public HashMap<CoursePool, Wishes> coursesChoices;
+	private HashMap<CoursePool, Wishes> coursesChoices;
 
 	public Student(String lastname, String firstname, int ranking) {
 		this(lastname, firstname, ranking, false);
@@ -24,4 +24,10 @@ public class Student {
 		this.coursesChoices = new HashMap<>();
 	}
 
+	public String getFirstname() { return this.firstname; }
+	public String getLastname() { return this.lastname; }
+	public int getRank() { return this.ranking; }
+	public boolean getRepeatStatus() { return this.repeating; }
+
+	/* No setters here: this probably shouldn't change. */
 }
