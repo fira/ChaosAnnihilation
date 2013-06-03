@@ -49,4 +49,6 @@ public class StudentsGroup {
 		sg1.changeStudent(st1, sg2);
 		sg2.changeStudent(st2, sg1);
 	}
+
+	public CoursePool getPool() { return this.pool };
 }
