@@ -8,4 +8,6 @@ public class CoursePool {
 	public CoursePool(String name) {
 		this.name = name;
 	};
+
+	public String getName() { return this.name; }
 }
