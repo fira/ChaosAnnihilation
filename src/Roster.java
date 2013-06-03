@@ -36,6 +36,13 @@ public class Roster {
 		this.assignement.clear();
 	}
 
+	/* Adds a new student to the list of the ones to consider */
+	/* Careful: this does not necesseraly means it will be included
+	 * in the assignements list, this is dependant on the algorithm */
+	public void addStudent(Student st) {
+		this.students.add(st);
+	}	
+
 	public int getSize() { return this.students.size(); }
 }
 			
