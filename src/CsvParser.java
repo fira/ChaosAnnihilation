@@ -16,24 +16,23 @@ public class CsvParser {
 	
 	try {
 	    scanner = new Scanner(csvFile);
-	    scanner.useDelimiter(",");
-	
+	    
+	    String line;
 	    Student student;
-	    String firstnameTemp;
-	    String lastnameTemp;
 	    int rankingTemp = 1;
-
 	    while(scanner.hasNext()) {
-		firstnameTemp = scanner.next();
-		lastnameTemp = scanner.next();
+		line = scanner.next();
 		
-		student = new Student(lastnameTemp, firstnameTemp, rankingTemp);
-		roster.addStudent(student);
-		
+		String[] studentArgs = line.split(",");
+		student = new Student(studentArgs[0], studentArgs[1], rankingTemp);
 		rankingTemp++;
 	    }
 	} catch (FileNotFoundException fnfe) {
-	    System.out.println(fnfe.getMessage());
+		System.out.println(fnfe.getMessage());
 	}
+    }
+    
+    public Roster getRoster() {
+	return roster;
     }
 }
