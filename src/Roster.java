@@ -43,6 +43,7 @@ public class Roster {
 		this.students.add(st);
 	}	
 
+	public List<Student> getStudents() { return this.students; }
 	public int getSize() { return this.students.size(); }
 }
 			
