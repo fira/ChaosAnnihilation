@@ -1,0 +1,86 @@
+Méthodologie de conception
+====================================
+Nous avons été amenés à dimensionner le projet a plusieurs reprises, certaines
+des solutions proposées étant impraticables. Eventuellement il s'est avéré que
+les spécifications exactes nécessaires étaient plutôt vagues, et que certaines
+des carractéristiques n'étaient pas encore fixées.
+
+Il a donc été décidé d'éventuellement repartir sur une base beaucoup plus 
+simple, mais d'offrir un maximum de flexibilité pour augmenter les possibilités
+d'extension par la suite. 
+
+Tout au long du projet nous avons utilisé des outils de gestion de code afin
+de répartir les tâches plus facilement : 
+ => https://github.com/fira/ChaosAnnihilation
+Nous avons de plus commencé par une modélisation complète du problème et
+la création d'interfaces, dans le but de créer des implémentations adaptées et
+interchangeables - ce qui est analogue en certains points à une méthode agile.
+
+
+Solution prévue
+=====================================
+Initialement il était envisagé de développer une application Web pour
+l'intégrer à la plateforme Moodle de l'école. Il est vite apparu que cela 
+poserait problème pour plusieurs raisons : 
+ - Besoin du déploiement d'une plateforme de développement adaptée 
+ - Nécessité de le déployer sur les serveurs de production
+ - Expérience limitée du groupe avec le développement web
+ - Réduction des possibilités d'extension
+ - Une migration de la plateforme est possible dans un futur proche
+ 
+Nous nous sommes donc orienté sur une solution plus générale, d'un simple
+programme local utilisé par les membres de l'administration.
+ - Reduit les impacts d'une erreur ou dysfonctionnement
+ - Ouverture a d'autres languages et solutions
+ - S'intègre relativement bien à l'environnement ciblé
+ 
+Ce programme est réalisé en Java car nous en avons déjà une certaine
+connaissance et il permet d'effectuer des opérations de haut-niveau relativement
+rapidement. L'utilisation de programmation objet ainsi que de la méthodologie
+MVC nous a aussi permi de réduire au maximum l'inter-dépendance des différents
+composants du programme et d'augmenter sa flexibilité. Enfin, Java est 
+disponnible sur la plus part des environnements Windows ce qui n'est pas
+forcément le cas d'autres languages.
+
+
+
+Structure
+=====================================
+Suivant la méthodologie MVC, le programme est réparti en quatre sections:
+ 
+  ** Modèle
+  Le modèle est un simple état du problème, dans ce cas les élèves, cours
+  et groupes. Il n'effectue aucune action.
+  
+  ** Controlleur
+  Le controlleur va appliquer des changements sur le modèle, c'est à dire en
+  l'occurence réorganiser les élèves dans des groupes. Nous avons défini 
+  deux types d'algorithmes et exposé une interface correspondante pour
+  permettre différentes implémentations, et l'ajout de nouvelles contraintes.
+   - Les algorithmes heuristiques déterminent le poids d'une situation de
+     répartition sur une partie du modèle et déterminent le meilleur cas
+   - Les algorithmes de répartition procèdent à la distribution en maniant
+     le modèle, et utilise éventuellement des algorithmes heuristiques
+     pour l'aider à ses décisions.
+  
+  ** Vue
+  La vue est une représentation du modèle. Il va donc se charger du rendu
+  du résultat dans une forme compréhensive. Plusieurs choix ont été envisagés,
+  par exemple sous forme de page web, mais nous avons opté pour la solution
+  plus pratique du format CSV, qui est supporté par tous les logiciels tableurs.
+  La vue se conforme à une interface et est interchangeable.
+  
+  ** Implémentation générale
+  C'est la partie qui va coordoner les trois autres pour les faire intéragir.
+  Elle est concue pour présenter un minimum de code à modifier et pouvoir être
+  très facilement conçue.
+  
+  
+
+Conclusion 
+======================================
+Nous avons réalisé un programme qui ne présente certes pas toutes les 
+fonctionnalités qui avaient été prévues au départ, mais pose une base flexible
+pour appliquer des critères plus complexes et plus adaptés. 
+Il sera ensuite donc possible d'étendre les parties de traitement, comme celles
+d'affichage en proposant par exemple une interface graphique.
