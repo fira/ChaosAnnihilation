@@ -5,16 +5,12 @@ public class Roster {
 	/* List of all students to be considered */
 	private ArrayList<Student> students;
 
-	/* List of possible courses */
-	private ArrayList<Course> courses;
-
 	/* List of student groups and their associated courses */
 	private LinkedList<StudentsGroup> assignement;
 
 	/* Build a new, empty students roster */
 	public Roster() {
 		this.students = new ArrayList<>();
-		this.courses = new ArrayList<>();
 		this.assignement = new LinkedList<>();
 	}	
 	
@@ -26,7 +22,6 @@ public class Roster {
 		at all times. This should be a real copy, but all in all,
 		we don't really need it (yet?). Also speedup things. */
 		this.students = source.students;
-		this.courses = source.courses;	
 		this.assignement = new LinkedList<>();
 	}
 	
